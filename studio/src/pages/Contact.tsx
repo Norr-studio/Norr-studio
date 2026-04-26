@@ -198,11 +198,7 @@ export default function Contact() {
                   </div>
 
                   {/* Form-level error */}
-                  {state.errors && state.errors.length > 0 && !state.succeeded && (
-                    <p className="font-body font-light text-red-400 text-[13px]">
-                      Something went wrong — please try again or email us directly.
-                    </p>
-                  )}
+                  <ValidationError errors={state.errors} className="font-body font-light text-red-400 text-[13px]" />
 
                   {/* Submit */}
                   <button
