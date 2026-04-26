@@ -41,7 +41,7 @@ export function FeaturesGrid() {
           {SERVICES.map((s, i) => (
             <motion.div
               key={s.number}
-              className="group flex items-start gap-8 md:gap-16 py-8 border-b border-white/[0.06] hover:bg-white/[0.015] -mx-4 px-4 transition-colors duration-300 cursor-default"
+              className="group flex items-start gap-8 md:gap-16 py-8 border-b border-white/[0.06] hover:bg-white/[0.015] -mx-4 px-4 transition-colors duration-300"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
