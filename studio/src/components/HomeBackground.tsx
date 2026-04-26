@@ -14,18 +14,21 @@ interface Star {
 
 function pickColor(): [number, number, number] {
   const r = Math.random()
-  if (r < 0.35) return [0, 80, 65]       // deep teal — far, barely there
-  if (r < 0.65) return [0, 155, 120]     // mid teal — standard
-  if (r < 0.85) return [0, 229, 160]     // brand teal — Norr accent
-  if (r < 0.97) return [150, 245, 220]   // pale teal — near-white highlight
-  return [230, 255, 250]                  // ghost white — extremely rare
+  if (r < 0.35) return [0, 80, 65]
+  if (r < 0.65) return [0, 155, 120]
+  if (r < 0.85) return [0, 229, 160]
+  if (r < 0.97) return [150, 245, 220]
+  return [230, 255, 250]
 }
 
 const LAYERS = [
-  { count: 260, sizeRange: [0.3, 0.5]   as [number,number], speedRange: [0.015, 0.05] as [number,number], opacityRange: [0.08, 0.20] as [number,number], glow: false, maxAngle: 3  },
-  { count: 120, sizeRange: [0.55, 0.95] as [number,number], speedRange: [0.055, 0.13] as [number,number], opacityRange: [0.18, 0.35] as [number,number], glow: false, maxAngle: 6  },
-  { count: 45,  sizeRange: [1.0, 2.0]   as [number,number], speedRange: [0.28, 0.48]  as [number,number], opacityRange: [0.30, 0.55] as [number,number], glow: true,  maxAngle: 11 },
+  { count: 260, sizeRange: [0.3, 0.5]   as [number,number], speedRange: [0.03, 0.09]  as [number,number], opacityRange: [0.08, 0.20] as [number,number], glow: false, maxAngle: 3  },
+  { count: 120, sizeRange: [0.55, 0.95] as [number,number], speedRange: [0.10, 0.22]  as [number,number], opacityRange: [0.18, 0.35] as [number,number], glow: false, maxAngle: 6  },
+  { count: 45,  sizeRange: [1.0, 2.0]   as [number,number], speedRange: [0.45, 0.75]  as [number,number], opacityRange: [0.30, 0.55] as [number,number], glow: true,  maxAngle: 11 },
 ]
+
+// Grain texture — SVG fractalNoise as a tiled CSS background
+const GRAIN_BG = "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")"
 
 function rnd(min: number, max: number) { return min + Math.random() * (max - min) }
 
@@ -50,6 +53,7 @@ function buildStars(w: number, h: number): Star[] {
   }
   return stars
 }
+
 
 export function HomeBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -146,8 +150,19 @@ export function HomeBackground() {
         }}
       />
 
-      {/* Star field */}
+      {/* Aurora + star field canvas */}
       <canvas ref={canvasRef} className="absolute inset-0" />
+
+      {/* Grain texture — SVG fractalNoise tiled at screen scale */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: GRAIN_BG,
+          backgroundSize: '256px 256px',
+          opacity: 0.032,
+          mixBlendMode: 'screen',
+        }}
+      />
     </div>
   )
 }
