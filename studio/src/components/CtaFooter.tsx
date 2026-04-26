@@ -62,7 +62,7 @@ export function CtaFooter() {
 
           {/* Headline */}
           <motion.h2
-            className="font-heading font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.88] tracking-tight mb-12"
+            className="font-heading italic font-bold text-[clamp(3.5rem,8vw,8rem)] leading-[0.92] mb-12"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -81,7 +81,7 @@ export function CtaFooter() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/45 max-w-[45ch] leading-relaxed">
+            <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/50 max-w-[45ch] leading-relaxed">
               Book a free strategy call. No commitment, no jargon — just a clear plan for your site.
             </p>
 

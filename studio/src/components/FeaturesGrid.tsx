@@ -51,7 +51,7 @@ export function FeaturesGrid() {
                 {s.number}
               </span>
               <div className="flex flex-col md:flex-row md:items-baseline md:gap-12 flex-1">
-                <h3 className="font-heading text-[clamp(1.15rem,2.5vw,1.5rem)] text-white/85 leading-tight mb-2 md:mb-0 md:w-56 flex-shrink-0">
+                <h3 className="font-heading italic text-[clamp(1.15rem,2.5vw,1.5rem)] text-white/85 leading-tight mb-2 md:mb-0 md:w-56 flex-shrink-0">
                   {s.title}
                 </h3>
                 <p className="font-body font-light text-white/35 text-[14px] leading-relaxed max-w-[48ch]">

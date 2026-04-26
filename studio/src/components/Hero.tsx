@@ -24,7 +24,7 @@ export function Hero() {
 
         {/* Headline — single unified entrance, no per-word stagger */}
         <motion.h1
-          className="font-heading italic font-bold text-[clamp(3.5rem,9vw,8.5rem)] leading-[0.88] tracking-tight mb-8"
+          className="font-heading italic font-bold text-[clamp(3.5rem,9vw,8.5rem)] leading-[0.92] mb-8"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}

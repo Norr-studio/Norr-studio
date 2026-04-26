@@ -49,7 +49,7 @@ function FeatureRow({
           <span className="inline-block text-[11px] font-body font-medium text-white/30 uppercase tracking-[0.2em] mb-6">
             {feature.tag}
           </span>
-          <h2 className="font-heading italic text-[clamp(1.8rem,4vw,3rem)] leading-tight text-white mb-6">
+          <h2 className="font-heading italic text-[clamp(1.8rem,4vw,3rem)] leading-[0.95] text-white mb-6">
             {feature.title}
           </h2>
           <p className="font-body font-light text-white/40 text-[15px] leading-[1.8] max-w-[42ch]">

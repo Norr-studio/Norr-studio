@@ -158,7 +158,7 @@ export default function Pricing() {
               <div className="mt-8">
                 <Link
                   to={tier.ctaHref}
-                  className={`block w-full text-center py-3 rounded-full text-[14px] font-body font-medium transition-all duration-200 ${
+                  className={`block w-full text-center py-3 rounded-full text-[14px] font-body font-medium transition-[background-color,border-color,color] duration-200 ${
                     tier.highlight
                       ? 'bg-white/[0.12] border border-white/25 text-white hover:bg-white/20'
                       : 'border border-white/20 text-white/70 hover:text-white hover:border-white/40'

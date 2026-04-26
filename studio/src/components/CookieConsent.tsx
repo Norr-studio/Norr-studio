@@ -41,7 +41,7 @@ export function CookieConsent() {
             <div className="flex items-center gap-3 shrink-0">
               <button
                 onClick={handleDecline}
-                className="px-4 py-1.5 rounded-full border border-white/20 text-[13px] font-body font-medium text-white/70 hover:bg-white/10 hover:border-white/40 transition-all duration-200"
+                className="px-4 py-1.5 rounded-full border border-white/20 text-[13px] font-body font-medium text-white/70 hover:bg-white/10 hover:border-white/40 transition-[background-color,border-color] duration-200"
               >
                 Essential only
               </button>

@@ -73,7 +73,7 @@ export function StartSection() {
             The process
           </motion.p>
           <motion.h2
-            className="font-heading font-bold text-[clamp(2.2rem,5vw,4rem)] leading-tight text-white max-w-xl"
+            className="font-heading italic font-bold text-[clamp(2.2rem,5vw,4rem)] leading-[0.95] text-white max-w-xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

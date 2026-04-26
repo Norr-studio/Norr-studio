@@ -57,7 +57,7 @@ export default function Work() {
         {/* Project name + one-liner */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <motion.h1
-            className="font-heading font-bold text-[clamp(3rem,7vw,7rem)] leading-[0.88] tracking-tight text-white"
+            className="font-heading italic font-bold text-[clamp(3rem,7vw,7rem)] leading-[0.92] text-white"
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
@@ -188,7 +188,7 @@ export default function Work() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
               >
-                <div className="font-heading font-bold text-[clamp(2rem,4vw,3rem)] leading-none text-white mb-2">
+                <div className="font-heading italic font-bold text-[clamp(2rem,4vw,3rem)] leading-[0.95] text-white mb-2">
                   {o.value}
                 </div>
                 <div className="font-body font-light text-[11px] text-white/30 uppercase tracking-[0.12em]">

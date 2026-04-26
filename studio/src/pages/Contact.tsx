@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import { motion } from 'motion/react'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
@@ -24,18 +25,9 @@ function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.Re
 }
 
 export default function Contact() {
+  const [state, handleSubmit] = useForm('mvzdyevz')
   const [projectType, setProjectType] = useState('')
   const [budget, setBudget] = useState('')
-  const [submitting, setSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitting(true)
-    await new Promise((r) => setTimeout(r, 1400))
-    setSubmitting(false)
-    setSubmitted(true)
-  }
 
   return (
     <div className="min-h-screen bg-transparent text-white">
@@ -85,7 +77,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              {submitted ? (
+              {state.succeeded ? (
                 <div className="liquid-glass rounded-2xl p-12 text-center">
                   <div className="w-12 h-12 rounded-full liquid-glass flex items-center justify-center mx-auto mb-6">
                     <svg className="w-5 h-5 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -98,7 +90,11 @@ export default function Contact() {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <form onSubmit={handleSubmit} className="space-y-6">
+
+                  {/* Hidden fields for toggle selections */}
+                  <input type="hidden" name="projectType" value={projectType} />
+                  <input type="hidden" name="budget" value={budget} />
 
                   {/* Name + Email row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -108,11 +104,13 @@ export default function Contact() {
                         <input
                           id="contact-name"
                           type="text"
+                          name="name"
                           required
                           placeholder="Your name"
                           className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none"
                         />
                       </div>
+                      <ValidationError field="name" errors={state.errors} className="text-red-400 text-[12px] mt-1" />
                     </div>
                     <div>
                       <FieldLabel htmlFor="contact-email">Email</FieldLabel>
@@ -120,11 +118,13 @@ export default function Contact() {
                         <input
                           id="contact-email"
                           type="email"
+                          name="email"
                           required
                           placeholder="you@company.com"
                           className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none"
                         />
                       </div>
+                      <ValidationError field="email" errors={state.errors} className="text-red-400 text-[12px] mt-1" />
                     </div>
                   </div>
 
@@ -145,7 +145,7 @@ export default function Contact() {
                           aria-pressed={projectType === type}
                           className={`px-4 py-2 rounded-full text-[13px] font-body font-medium transition-[background-color,color] duration-200 ${
                             projectType === type
-                              ? 'liquid-glass-strong text-white'
+                              ? 'bg-white/[0.12] border border-white/25 text-white'
                               : 'liquid-glass text-white/40 hover:text-white/70'
                           }`}
                         >
@@ -172,7 +172,7 @@ export default function Contact() {
                           aria-pressed={budget === range}
                           className={`px-4 py-2 rounded-full text-[13px] font-body font-medium transition-[background-color,color] duration-200 ${
                             budget === range
-                              ? 'liquid-glass-strong text-white'
+                              ? 'bg-white/[0.12] border border-white/25 text-white'
                               : 'liquid-glass text-white/40 hover:text-white/70'
                           }`}
                         >
@@ -188,20 +188,29 @@ export default function Contact() {
                     <div className="liquid-glass rounded-xl px-5 py-3.5 focus-within:ring-1 focus-within:ring-white/20 transition-[box-shadow] duration-200">
                       <textarea
                         id="contact-message"
+                        name="message"
                         rows={5}
                         placeholder="What are you building? Any deadline? Anything else we should know?"
                         className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none resize-none leading-relaxed"
                       />
                     </div>
+                    <ValidationError field="message" errors={state.errors} className="text-red-400 text-[12px] mt-1" />
                   </div>
+
+                  {/* Form-level error */}
+                  {state.errors && state.errors.length > 0 && !state.succeeded && (
+                    <p className="font-body font-light text-red-400 text-[13px]">
+                      Something went wrong — please try again or email us directly.
+                    </p>
+                  )}
 
                   {/* Submit */}
                   <button
                     type="submit"
-                    disabled={submitting}
-                    className="liquid-glass-strong px-10 py-4 rounded-full text-[14px] font-body font-medium text-white hover:bg-white/10 transition-[background-color] duration-200 disabled:opacity-60 flex items-center gap-3"
+                    disabled={state.submitting}
+                    className="bg-white/[0.12] border border-white/25 px-10 py-4 rounded-full text-[14px] font-body font-medium text-white hover:bg-white/20 transition-[background-color,border-color] duration-200 disabled:opacity-60 flex items-center gap-3"
                   >
-                    {submitting ? (
+                    {state.submitting ? (
                       <>
                         <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />

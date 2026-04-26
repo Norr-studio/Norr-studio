@@ -95,10 +95,10 @@ export function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.05]">
-          <p className="font-body font-light text-[12px] text-white/20">
+          <p className="font-body font-light text-[12px] text-white/30">
             © 2026 Norr Studio. All rights reserved.
           </p>
-          <p className="font-body font-light text-[12px] text-white/15">
+          <p className="font-body font-light text-[12px] text-white/25">
             Crafted with AI. Refined by humans.
           </p>
         </div>
