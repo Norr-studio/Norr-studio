@@ -7,8 +7,6 @@ export function Cursor() {
   const mouseX = useMotionValue(-100)
   const mouseY = useMotionValue(-100)
 
-  const dotX = useSpring(mouseX, { stiffness: 1000, damping: 50 })
-  const dotY = useSpring(mouseY, { stiffness: 1000, damping: 50 })
   const ringX = useSpring(mouseX, { stiffness: 450, damping: 35 })
   const ringY = useSpring(mouseY, { stiffness: 450, damping: 35 })
 
@@ -58,8 +56,8 @@ export function Cursor() {
       <motion.div
         className="pointer-events-none fixed top-0 left-0 w-1 h-1 rounded-full bg-white/80 z-[99999]"
         style={{
-          x: dotX,
-          y: dotY,
+          x: mouseX,
+          y: mouseY,
           translateX: '-50%',
           translateY: '-50%',
         }}

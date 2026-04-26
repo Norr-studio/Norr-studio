@@ -34,9 +34,6 @@
     scroll-behavior: smooth;
   }
 
-  @media (pointer: fine) {
-    *, html { cursor: none !important; }
-  }
 
   @keyframes marquee {
     from { transform: translateX(0); }
@@ -139,4 +136,8 @@
     pointer-events: none;
     z-index: 1;
   }
+}
+
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
 }
