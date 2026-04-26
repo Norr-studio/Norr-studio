@@ -24,7 +24,7 @@ export function Hero() {
 
         {/* Headline — single unified entrance, no per-word stagger */}
         <motion.h1
-          className="font-heading font-bold text-[clamp(3.5rem,9vw,8.5rem)] leading-[0.88] tracking-tight mb-8"
+          className="font-heading italic font-bold text-[clamp(3.5rem,9vw,8.5rem)] leading-[0.88] tracking-tight mb-8"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
@@ -41,7 +41,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/45 max-w-[45ch] leading-relaxed">
+          <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/50 max-w-[45ch] leading-relaxed">
             We design and build conversion-first websites powered by AI — launched in days, not months.
           </p>
 
