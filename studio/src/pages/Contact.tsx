@@ -53,7 +53,7 @@ export default function Contact() {
             >
               Tell us about
               <br />
-              <span className="text-white/40">your project</span>
+              <span className="text-white/40 tracking-[0.01em]">your project</span>
             </motion.h1>
             <motion.p
               className="font-body font-light text-white/35 text-[15px] max-w-[45ch] leading-relaxed"

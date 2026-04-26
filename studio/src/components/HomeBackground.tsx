@@ -22,9 +22,9 @@ function pickColor(): [number, number, number] {
 }
 
 const LAYERS = [
-  { count: 200, sizeRange: [0.3, 0.5]   as [number,number], speedRange: [0.015, 0.05] as [number,number], opacityRange: [0.05, 0.14] as [number,number], glow: false, maxAngle: 3  },
-  { count: 80,  sizeRange: [0.55, 0.95] as [number,number], speedRange: [0.055, 0.13] as [number,number], opacityRange: [0.12, 0.25] as [number,number], glow: false, maxAngle: 6  },
-  { count: 30,  sizeRange: [1.0, 2.0]   as [number,number], speedRange: [0.28, 0.48]  as [number,number], opacityRange: [0.25, 0.45] as [number,number], glow: true,  maxAngle: 11 },
+  { count: 260, sizeRange: [0.3, 0.5]   as [number,number], speedRange: [0.015, 0.05] as [number,number], opacityRange: [0.08, 0.20] as [number,number], glow: false, maxAngle: 3  },
+  { count: 120, sizeRange: [0.55, 0.95] as [number,number], speedRange: [0.055, 0.13] as [number,number], opacityRange: [0.18, 0.35] as [number,number], glow: false, maxAngle: 6  },
+  { count: 45,  sizeRange: [1.0, 2.0]   as [number,number], speedRange: [0.28, 0.48]  as [number,number], opacityRange: [0.30, 0.55] as [number,number], glow: true,  maxAngle: 11 },
 ]
 
 function rnd(min: number, max: number) { return min + Math.random() * (max - min) }

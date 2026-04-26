@@ -70,7 +70,7 @@ export function CtaFooter() {
           >
             <span className="text-white">Ready to build</span>
             <br />
-            <span className="text-white/60">something great?</span>
+            <span className="text-white/60 tracking-[0.015em]">something great?</span>
           </motion.h2>
 
           {/* Body + CTA row */}
