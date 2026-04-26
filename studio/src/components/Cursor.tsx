@@ -9,8 +9,8 @@ export function Cursor() {
 
   const dotX = useSpring(mouseX, { stiffness: 1000, damping: 50 })
   const dotY = useSpring(mouseY, { stiffness: 1000, damping: 50 })
-  const ringX = useSpring(mouseX, { stiffness: 200, damping: 28 })
-  const ringY = useSpring(mouseY, { stiffness: 200, damping: 28 })
+  const ringX = useSpring(mouseX, { stiffness: 450, damping: 35 })
+  const ringY = useSpring(mouseY, { stiffness: 450, damping: 35 })
 
   useEffect(() => {
     // Only enable on true pointer devices (mouse / trackpad), not touch
@@ -43,18 +43,15 @@ export function Cursor() {
     <>
       {/* Outer ring — lags behind with spring physics */}
       <motion.div
-        className="pointer-events-none fixed top-0 left-0 rounded-full border z-[99999]"
+        className="pointer-events-none fixed top-0 left-0 w-7 h-7 rounded-full border z-[99999]"
         style={{
           x: ringX,
           y: ringY,
           translateX: '-50%',
           translateY: '-50%',
-        }}
-        animate={{
-          width: hovered ? 44 : 28,
-          height: hovered ? 44 : 28,
           borderColor: hovered ? 'rgba(255,255,255,0.5)' : 'rgba(255,255,255,0.25)',
         }}
+        animate={{ scale: hovered ? 1.57 : 1 }}
         transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
       />
       {/* Inner dot — precise tracking */}

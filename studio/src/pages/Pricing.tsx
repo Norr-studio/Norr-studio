@@ -160,7 +160,7 @@ export default function Pricing() {
                   to={tier.ctaHref}
                   className={`block w-full text-center py-3 rounded-full text-[14px] font-body font-medium transition-all duration-200 ${
                     tier.highlight
-                      ? 'liquid-glass-strong text-white hover:bg-white/10'
+                      ? 'bg-white/[0.12] border border-white/25 text-white hover:bg-white/20'
                       : 'border border-white/20 text-white/70 hover:text-white hover:border-white/40'
                   }`}
                 >
