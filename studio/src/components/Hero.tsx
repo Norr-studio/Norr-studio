@@ -31,7 +31,7 @@ export function Hero() {
         >
           <span className="text-white">Websites that</span>
           <br />
-          <span className="text-white/60 tracking-[0.04em]">think for you</span>
+          <span className="text-white">think for you</span>
         </motion.h1>
 
         {/* Body copy + CTAs — side by side on desktop, stacked on mobile */}
