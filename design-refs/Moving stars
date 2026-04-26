@@ -1,0 +1,48 @@
+@starDimension: 2px;
+
+#star-field {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  .star {
+    width: @starDimension;
+    height: @starDimension;
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    
+    &.far {
+      width: @starDimension - 1;
+      height: @starDimension - 1;
+    }
+    
+    &.near {
+      width: @starDimension + 2;
+      height: @starDimension + 2;
+    }
+    
+    &.white {
+      background: #fff;
+      box-shadow: 0 0 15px #fff;
+    }
+    
+    &.yellow {
+      background: #BFBB40;
+      box-shadow: 0 0 15px #BFBB40;
+    }
+    
+    &.blue {
+      background: #4444ff;
+      box-shadow: 0 0 15px #4444ff;
+    }
+    
+    &.red {
+      background: #ff4444;
+      box-shadow: 0 0 15px #ff4444;
+    }
+  }
+}
