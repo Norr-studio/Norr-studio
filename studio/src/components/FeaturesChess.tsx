@@ -6,15 +6,15 @@ import feature2 from '../assets/feature-2.gif'
 const FEATURES = [
   {
     tag: 'Design Intelligence',
-    title: 'AI that understands your brand',
-    body: 'Our model analyses your competitors, industry patterns, and conversion benchmarks before generating a single pixel. The result is a design that feels unmistakably yours.',
+    title: 'Built for your business, not borrowed from a template',
+    body: 'We look at your market and your competitors before touching a layout. The site you get feels like it was made for your business specifically, because it was.',
     gif: feature1,
     alt: 'AI design preview',
   },
   {
     tag: 'Speed',
-    title: 'Production-ready in two weeks',
-    body: 'Parallel AI-assisted workflows mean design and development happen simultaneously. No waterfall. No bottlenecks. Just a live, optimised site shipped on a fixed timeline.',
+    title: 'Live in two weeks',
+    body: 'Design and development happen in parallel. No waiting for one to finish before the other starts. You get a real site on a real date.',
     gif: feature2,
     alt: 'Rapid build preview',
   },

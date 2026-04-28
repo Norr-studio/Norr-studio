@@ -29,7 +29,7 @@ export function Footer() {
               <img src="/images/logo.svg" alt="Norr Studio" className="h-9 w-auto" />
             </Link>
             <p className="font-body font-light text-white/25 text-[13px] leading-relaxed max-w-[22ch]">
-              AI-powered web design for ambitious founders.
+              Websites for Finnish businesses.
             </p>
             <div className="flex items-center gap-4 mt-5">
               <a
@@ -98,8 +98,11 @@ export function Footer() {
           <p className="font-body font-light text-[12px] text-white/30">
             © 2026 Norr Studio. All rights reserved.
           </p>
+          <p className="font-body font-light text-[12px] text-white/20">
+            Y-tunnus 3618179-8
+          </p>
           <p className="font-body font-light text-[12px] text-white/25">
-            Crafted with AI. Refined by humans.
+            Websites for Finnish businesses.
           </p>
         </div>
       </div>

@@ -92,7 +92,7 @@ export default function Pricing() {
           >
             Simple, transparent
             <br />
-            <span className="text-white/40 tracking-[0.01em]">pricing</span>
+            <span className="text-white">pricing</span>
           </motion.h1>
           <motion.p
             className="font-body font-light text-white/35 text-[15px] max-w-[48ch] leading-relaxed"

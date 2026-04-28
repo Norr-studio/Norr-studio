@@ -15,11 +15,6 @@ const PROJECT = {
   description: `Extendd needed a site that matched the ambition of their offer — combining technology and personal consulting to grow businesses sustainably. We built a fast, conversion-focused site delivered in under two weeks.`,
   heroImg:     '/extendd-hero.png',     // ← save your Screely image to studio/public/extendd-hero.png
   detailImg:   '/extendd-detail.png',
-  outcomes: [
-    { value: '2 wks', label: 'Delivered in'  },
-    { value: '100%',  label: 'Client satisfaction' },
-    { value: '↗',     label: 'Live at extendd.fi'  },
-  ],
 }
 
 export default function Work() {
@@ -168,36 +163,7 @@ export default function Work() {
         </div>
       </motion.div>
 
-      {/* ── Outcomes ─────────────────────────────────────────────────────── */}
       <section className="px-8 md:px-16 mb-24">
-        <motion.div
-          className="flex flex-col sm:flex-row gap-px bg-white/[0.05] overflow-hidden rounded-xl"
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          {PROJECT.outcomes.map((o, i) => (
-            <div
-              key={o.label}
-              className="flex-1 px-8 py-10 bg-[#020d0a]"
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.15 + i * 0.1 }}
-              >
-                <div className="font-heading italic font-bold text-[clamp(2rem,4vw,3rem)] leading-[0.95] text-white mb-2">
-                  {o.value}
-                </div>
-                <div className="font-body font-light text-[11px] text-white/30 uppercase tracking-[0.12em]">
-                  {o.label}
-                </div>
-              </motion.div>
-            </div>
-          ))}
-        </motion.div>
       </section>
 
       {/* ── More work CTA ────────────────────────────────────────────────── */}

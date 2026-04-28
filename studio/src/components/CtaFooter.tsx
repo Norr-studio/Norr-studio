@@ -68,9 +68,9 @@ export function CtaFooter() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-white">Ready to build</span>
+            <span className="text-white">Want to see what</span>
             <br />
-            <span className="text-white/60 tracking-[0.04em]">something great?</span>
+            <span className="text-white">your site could do?</span>
           </motion.h2>
 
           {/* Body + CTA row */}
@@ -82,7 +82,7 @@ export function CtaFooter() {
             transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/50 max-w-[45ch] leading-relaxed">
-              Book a free strategy call. No commitment, no jargon — just a clear plan for your site.
+              Book a free call. We'll map out exactly what your site needs. Takes 30 minutes, no strings attached. You'll have a clear plan by the end of it.
             </p>
 
             <div className="flex flex-col gap-2 flex-shrink-0">
@@ -90,7 +90,7 @@ export function CtaFooter() {
                 to="/contact"
                 className="group font-body font-medium text-[15px] text-brand hover:text-[#00cfa0] transition-colors duration-200 flex items-center gap-2"
               >
-                Book a call
+              Book a call
                 <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
               </Link>
               <span className="font-body font-light text-[12px] text-white/25 tracking-wide">

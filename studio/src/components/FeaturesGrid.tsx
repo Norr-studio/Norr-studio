@@ -4,22 +4,22 @@ const SERVICES = [
   {
     number: '01',
     title: 'Instant iterations',
-    body: 'Request a layout change and see it live within hours — not a ticket queue.',
+    body: 'Ask for a change. See it live the same day, not in a week.',
   },
   {
     number: '02',
     title: 'Conversion-first',
-    body: 'Every design decision is backed by A/B data and heatmap analysis from 500+ client sites.',
+    body: 'Every decision on the page comes down to one question: will this make the visitor take action?',
   },
   {
     number: '03',
-    title: 'Brand-locked design',
-    body: 'Your colour system, typography, and motion language are codified as tokens — never broken.',
+    title: 'Consistent brand',
+    body: 'Same colours, fonts, and feel everywhere. Nothing drifts.',
   },
   {
     number: '04',
-    title: 'Continuous updates',
-    body: 'Monthly design refreshes keep your site ahead of the curve with zero re-platforming cost.',
+    title: 'Monthly updates',
+    body: 'Your site stays current. No rebuilds, no re-platforming, no extra cost.',
   },
 ]
 

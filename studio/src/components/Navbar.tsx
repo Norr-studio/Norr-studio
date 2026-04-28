@@ -123,7 +123,7 @@ export function Navbar() {
                   key={link.label}
                   href={isHome ? link.href : `/${link.href}`}
                   onClick={() => setMenuOpen(false)}
-                  className="px-6 py-3 text-[14px] font-body font-light text-white/60 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
+                  className="px-6 py-3 text-[14px] font-body font-light text-white/90 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
                 >
                   {link.label}
                 </a>
@@ -132,7 +132,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className="px-6 py-3 text-[14px] font-body font-light text-white/60 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
+                  className="px-6 py-3 text-[14px] font-body font-light text-white/90 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
                 >
                   {link.label}
                 </Link>

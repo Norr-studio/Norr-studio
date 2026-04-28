@@ -29,9 +29,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="text-white">Websites that</span>
+          <span className="text-white">A website that gets you</span>
           <br />
-          <span className="text-white">think for you</span>
+          <span className="text-white">more customers, live in two weeks</span>
         </motion.h1>
 
         {/* Body copy + CTAs — side by side on desktop, stacked on mobile */}
@@ -42,7 +42,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.38, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/50 max-w-[45ch] leading-relaxed">
-            We design and build conversion-first websites powered by AI — launched in days, not months.
+            We take care of the design, the build, the launch. You run your business.
           </p>
 
           <div className="flex items-center gap-8 flex-shrink-0">
@@ -50,7 +50,7 @@ export function Hero() {
               to="/contact"
               className="group font-body font-medium text-[15px] text-brand hover:text-[#00cfa0] transition-colors duration-200 flex items-center gap-2"
             >
-              Start your project
+              Book a call
               <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
             </Link>
             <a

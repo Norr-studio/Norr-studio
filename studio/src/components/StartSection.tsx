@@ -9,17 +9,17 @@ const STEPS = [
   {
     number: '01',
     title: 'Brief & Strategy',
-    body: 'We learn your business, audience, and goals in a single 30-minute call. Our AI drafts a conversion-focused sitemap before the call ends.',
+    body: 'One 30-minute call. We ask the right questions about your business, your customers, and what you want people to do when they land on your site.',
   },
   {
     number: '02',
     title: 'Design & Build',
-    body: 'AI-generated designs are refined by senior designers. Development runs in parallel — most sites ship in under two weeks.',
+    body: 'Senior designers build it. AI cuts the waiting time. Most sites ship in two weeks.',
   },
   {
     number: '03',
     title: 'Launch & Iterate',
-    body: 'We deploy to a global CDN, monitor performance, and push ongoing improvements based on real user data.',
+    body: 'We go live. Then we track what\'s working and fix what isn\'t. No ticket, no waiting.',
   },
 ]
 
@@ -79,7 +79,7 @@ export function StartSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            From brief to live site in days
+            Brief to live site in days
           </motion.h2>
         </div>
 
