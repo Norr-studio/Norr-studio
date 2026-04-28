@@ -29,9 +29,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-          <span className="text-white">A website that gets you</span>
+          <span className="text-white">Websites that</span>
           <br />
-          <span className="text-white">more customers, live in two weeks</span>
+          <span className="text-white">think for you</span>
         </motion.h1>
 
         {/* Body copy + CTAs — side by side on desktop, stacked on mobile */}
