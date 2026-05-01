@@ -2,12 +2,14 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 import Hls from 'hls.js'
+import { useTranslation } from 'react-i18next'
 import { Footer } from './Footer'
 
 const HLS_URL = ''
 
 export function CtaFooter() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const v = videoRef.current
@@ -68,9 +70,9 @@ export function CtaFooter() {
             viewport={{ once: true }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <span className="text-white">Want to see what</span>
+            <span className="text-white">{t('cta.line1')}</span>
             <br />
-            <span className="text-white">your site could do?</span>
+            <span className="text-white">{t('cta.line2')}</span>
           </motion.h2>
 
           {/* Body + CTA row */}
@@ -82,7 +84,7 @@ export function CtaFooter() {
             transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             <p className="font-body font-light text-[clamp(0.9rem,1.5vw,1.05rem)] text-white/50 max-w-[45ch] leading-relaxed">
-              Book a free call. We'll map out exactly what your site needs. Takes 30 minutes, no strings attached. You'll have a clear plan by the end of it.
+              {t('cta.body')}
             </p>
 
             <div className="flex flex-col gap-2 flex-shrink-0">
@@ -90,7 +92,7 @@ export function CtaFooter() {
                 to="/contact"
                 className="group font-body font-medium text-[15px] text-brand hover:text-[#00cfa0] transition-colors duration-200 flex items-center gap-2"
               >
-              Book a call
+                {t('cta.bookCall')}
                 <span className="inline-block group-hover:translate-x-1 transition-transform duration-200">→</span>
               </Link>
               <span className="font-body font-light text-[12px] text-white/25 tracking-wide">

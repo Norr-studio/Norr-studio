@@ -1,24 +1,27 @@
 import { Link } from 'react-router-dom'
 import { Linkedin } from 'lucide-react'
-
-const PRODUCT_LINKS = [
-  { label: 'How it works', href: '/#how-it-works' },
-  { label: 'Features', href: '/#features' },
-  { label: 'Pricing', href: '/pricing' },
-  { label: 'Our work', href: '/work' },
-]
-
-const COMPANY_LINKS = [
-  { label: 'Contact', href: '/contact' },
-]
-
-const LEGAL_LINKS = [
-  { label: 'Privacy', href: '/privacy' },
-  { label: 'Terms', href: '/terms' },
-  { label: 'Cookies', href: '/cookies' },
-]
+import { useTranslation } from 'react-i18next'
 
 export function Footer() {
+  const { t } = useTranslation()
+
+  const productLinks = [
+    { labelKey: 'footer.links.howItWorks', href: '/#how-it-works' },
+    { labelKey: 'footer.links.features', href: '/#features' },
+    { labelKey: 'footer.links.pricing', href: '/pricing' },
+    { labelKey: 'footer.links.ourWork', href: '/work' },
+  ]
+
+  const companyLinks = [
+    { labelKey: 'footer.links.contact', href: '/contact' },
+  ]
+
+  const legalLinks = [
+    { labelKey: 'footer.links.privacy', href: '/privacy' },
+    { labelKey: 'footer.links.terms', href: '/terms' },
+    { labelKey: 'footer.links.cookies', href: '/cookies' },
+  ]
+
   return (
     <div className="border-t border-white/[0.06] px-6 py-16 bg-[#020d0a]">
       <div className="max-w-6xl mx-auto">
@@ -29,7 +32,7 @@ export function Footer() {
               <img src="/images/logo.svg" alt="Norr Studio" className="h-9 w-auto" />
             </Link>
             <p className="font-body font-light text-white/25 text-[13px] leading-relaxed max-w-[22ch]">
-              Websites for Finnish businesses.
+              {t('footer.tagline')}
             </p>
             <div className="flex items-center gap-4 mt-5">
               <a
@@ -47,13 +50,13 @@ export function Footer() {
           {/* Product */}
           <div>
             <p className="font-body font-medium text-[11px] text-white/25 uppercase tracking-[0.15em] mb-4">
-              Product
+              {t('footer.product')}
             </p>
             <ul className="space-y-2.5">
-              {PRODUCT_LINKS.map(({ label, href }) => (
-                <li key={label}>
+              {productLinks.map(({ labelKey, href }) => (
+                <li key={labelKey}>
                   <Link to={href} className="font-body font-light text-[13px] text-white/35 hover:text-white/70 transition-colors duration-200">
-                    {label}
+                    {t(labelKey)}
                   </Link>
                 </li>
               ))}
@@ -63,13 +66,13 @@ export function Footer() {
           {/* Company */}
           <div>
             <p className="font-body font-medium text-[11px] text-white/25 uppercase tracking-[0.15em] mb-4">
-              Company
+              {t('footer.company')}
             </p>
             <ul className="space-y-2.5">
-              {COMPANY_LINKS.map(({ label, href }) => (
-                <li key={label}>
+              {companyLinks.map(({ labelKey, href }) => (
+                <li key={labelKey}>
                   <Link to={href} className="font-body font-light text-[13px] text-white/35 hover:text-white/70 transition-colors duration-200">
-                    {label}
+                    {t(labelKey)}
                   </Link>
                 </li>
               ))}
@@ -79,13 +82,13 @@ export function Footer() {
           {/* Legal */}
           <div>
             <p className="font-body font-medium text-[11px] text-white/25 uppercase tracking-[0.15em] mb-4">
-              Legal
+              {t('footer.legal')}
             </p>
             <ul className="space-y-2.5">
-              {LEGAL_LINKS.map(({ label, href }) => (
-                <li key={label}>
+              {legalLinks.map(({ labelKey, href }) => (
+                <li key={labelKey}>
                   <Link to={href} className="font-body font-light text-[13px] text-white/35 hover:text-white/70 transition-colors duration-200">
-                    {label}
+                    {t(labelKey)}
                   </Link>
                 </li>
               ))}
@@ -96,13 +99,13 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.05]">
           <p className="font-body font-light text-[12px] text-white/30">
-            © 2026 Norr Studio. All rights reserved.
+            {t('footer.copyright')}
           </p>
           <p className="font-body font-light text-[12px] text-white/20">
             Y-tunnus 3618179-8
           </p>
           <p className="font-body font-light text-[12px] text-white/25">
-            Websites for Finnish businesses.
+            {t('footer.tagline')}
           </p>
         </div>
       </div>

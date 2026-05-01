@@ -1,17 +1,9 @@
 import { useState } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
-
-const PROJECT_TYPES = ['Website', 'Landing page', 'Other']
-const BUDGET_RANGES = ['Under 1k€', '1k€ – 3k€', '3k€+']
-
-const TRUST_POINTS = [
-  { label: 'Response time', value: 'Within one business day' },
-  { label: 'No commitment', value: 'First call is always free' },
-  { label: 'NDA available', value: 'On request before briefing' },
-]
 
 function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
@@ -24,10 +16,17 @@ function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.Re
   )
 }
 
+type TrustPoint = { label: string; value: string }
+
 export default function Contact() {
   const [state, handleSubmit] = useForm('mvzdyevz')
   const [projectType, setProjectType] = useState('')
   const [budget, setBudget] = useState('')
+  const { t } = useTranslation()
+
+  const projectTypes = t('contact.projectTypes', { returnObjects: true }) as string[]
+  const budgetRanges = t('contact.budgetRanges', { returnObjects: true }) as string[]
+  const trustPoints = t('contact.trustPoints', { returnObjects: true }) as TrustPoint[]
 
   return (
     <div className="min-h-screen bg-transparent text-white">
@@ -43,7 +42,7 @@ export default function Contact() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
             >
-              Let&apos;s talk
+              {t('contact.label')}
             </motion.p>
             <motion.h1
               className="font-heading italic text-[clamp(2.5rem,6vw,5rem)] leading-[0.95] text-white mb-6"
@@ -51,9 +50,9 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
             >
-              Tell us about
+              {t('contact.heading1')}
               <br />
-              <span className="text-white">your project</span>
+              <span className="text-white">{t('contact.heading2')}</span>
             </motion.h1>
             <motion.p
               className="font-body font-light text-white/35 text-[15px] max-w-[45ch] leading-relaxed"
@@ -61,7 +60,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.5 }}
             >
-              Fill in a few details and we&apos;ll come back to you with a clear plan — no jargon, no pressure.
+              {t('contact.subheading')}
             </motion.p>
           </div>
         </section>
@@ -84,9 +83,9 @@ export default function Contact() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
-                  <h2 className="font-heading italic text-2xl text-white mb-3">Message received</h2>
+                  <h2 className="font-heading italic text-2xl text-white mb-3">{t('contact.successHeading')}</h2>
                   <p className="font-body font-light text-white/40 text-[14px]">
-                    We&apos;ll be in touch within one business day.
+                    {t('contact.successBody')}
                   </p>
                 </div>
               ) : (
@@ -99,28 +98,28 @@ export default function Contact() {
                   {/* Name + Email row */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <FieldLabel htmlFor="contact-name">Name</FieldLabel>
+                      <FieldLabel htmlFor="contact-name">{t('contact.fieldName')}</FieldLabel>
                       <div className="liquid-glass rounded-xl px-5 py-3.5 focus-within:ring-1 focus-within:ring-white/20 transition-[box-shadow] duration-200">
                         <input
                           id="contact-name"
                           type="text"
                           name="name"
                           required
-                          placeholder="Your name"
+                          placeholder={t('contact.placeholderName')}
                           className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none"
                         />
                       </div>
                       <ValidationError field="name" errors={state.errors} className="text-red-400 text-[12px] mt-1" />
                     </div>
                     <div>
-                      <FieldLabel htmlFor="contact-email">Email</FieldLabel>
+                      <FieldLabel htmlFor="contact-email">{t('contact.fieldEmail')}</FieldLabel>
                       <div className="liquid-glass rounded-xl px-5 py-3.5 focus-within:ring-1 focus-within:ring-white/20 transition-[box-shadow] duration-200">
                         <input
                           id="contact-email"
                           type="email"
                           name="email"
                           required
-                          placeholder="you@company.com"
+                          placeholder={t('contact.placeholderEmail')}
                           className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none"
                         />
                       </div>
@@ -134,10 +133,10 @@ export default function Contact() {
                       id="project-type-label"
                       className="block text-[11px] font-body font-medium text-white/30 uppercase tracking-[0.15em] mb-2"
                     >
-                      Project type
+                      {t('contact.fieldProjectType')}
                     </p>
                     <div className="flex flex-wrap gap-2" role="group" aria-labelledby="project-type-label">
-                      {PROJECT_TYPES.map((type) => (
+                      {projectTypes.map((type) => (
                         <button
                           key={type}
                           type="button"
@@ -161,10 +160,10 @@ export default function Contact() {
                       id="budget-label"
                       className="block text-[11px] font-body font-medium text-white/30 uppercase tracking-[0.15em] mb-2"
                     >
-                      Budget range
+                      {t('contact.fieldBudget')}
                     </p>
                     <div className="flex flex-wrap gap-2" role="group" aria-labelledby="budget-label">
-                      {BUDGET_RANGES.map((range) => (
+                      {budgetRanges.map((range) => (
                         <button
                           key={range}
                           type="button"
@@ -184,13 +183,13 @@ export default function Contact() {
 
                   {/* Message */}
                   <div>
-                    <FieldLabel htmlFor="contact-message">Tell us more</FieldLabel>
+                    <FieldLabel htmlFor="contact-message">{t('contact.fieldMessage')}</FieldLabel>
                     <div className="liquid-glass rounded-xl px-5 py-3.5 focus-within:ring-1 focus-within:ring-white/20 transition-[box-shadow] duration-200">
                       <textarea
                         id="contact-message"
                         name="message"
                         rows={5}
-                        placeholder="What are you building? Any deadline? Anything else we should know?"
+                        placeholder={t('contact.placeholderMessage')}
                         className="w-full bg-transparent text-white/80 placeholder:text-white/15 font-body font-light text-[14px] focus:outline-none resize-none leading-relaxed"
                       />
                     </div>
@@ -212,10 +211,10 @@ export default function Contact() {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
                         </svg>
-                        Sending…
+                        {t('contact.sending')}
                       </>
                     ) : (
-                      'Send message'
+                      t('contact.send')
                     )}
                   </button>
 
@@ -233,7 +232,7 @@ export default function Contact() {
               {/* Direct email */}
               <div className="mb-10">
                 <p className="text-[11px] font-body font-medium text-white/25 uppercase tracking-[0.15em] mb-3">
-                  Or write directly
+                  {t('contact.orWriteDirectly')}
                 </p>
                 <a
                   href="mailto:marijus@norrstudio.fi"
@@ -245,7 +244,7 @@ export default function Contact() {
 
               {/* Trust points */}
               <div className="space-y-0">
-                {TRUST_POINTS.map((point) => (
+                {trustPoints.map((point) => (
                   <div
                     key={point.label}
                     className="py-5 border-t border-white/[0.05] first:border-t-0"

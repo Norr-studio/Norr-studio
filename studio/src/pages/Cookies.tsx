@@ -1,34 +1,15 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import { BlurText } from '../components/BlurText'
 
-const LAST_UPDATED = 'April 2026'
-
-const SECTIONS = [
-  {
-    title: 'What Are Cookies',
-    body: `Cookies are small text files stored on your device when you visit a website. They allow the site to remember your preferences and understand how you interact with its pages. Cookies do not contain personally identifiable information by themselves, though they may be linked to it.`,
-  },
-  {
-    title: 'How We Use Cookies',
-    body: `Norr Studio uses cookies to understand how visitors navigate our site, measure the effectiveness of our pages, and improve the overall experience. We do not use cookies to serve targeted advertising or to track you across unrelated third-party websites.`,
-  },
-  {
-    title: 'Types of Cookies We Use',
-    body: `Essential cookies are required for basic site functionality such as navigation and form submission — these cannot be disabled. Analytics cookies (such as those set by Google Analytics or similar tools) help us understand visitor behaviour in aggregate. No personally identifiable data is stored in analytics cookies.`,
-  },
-  {
-    title: 'Managing Cookies',
-    body: `You can control and delete cookies through your browser settings. Most browsers allow you to refuse new cookies, delete existing cookies, and set preferences for specific websites. Note that disabling cookies may affect the functionality of some parts of this site. For guidance on managing cookies in your browser, visit your browser's help section.`,
-  },
-  {
-    title: 'Contact',
-    body: `If you have questions about how we use cookies, please contact us at hello@norrstudio.com.`,
-  },
-]
+type Section = { title: string; body: string }
 
 export default function Cookies() {
+  const { t } = useTranslation()
+  const sections = t('cookiesPage.sections', { returnObjects: true }) as Section[]
+
   return (
     <div className="min-h-screen bg-transparent text-white">
       <Navbar />
@@ -41,10 +22,10 @@ export default function Cookies() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            Legal
+            {t('cookiesPage.label')}
           </motion.p>
           <h1 className="font-heading italic text-[clamp(2.2rem,5vw,4rem)] leading-[0.95] text-white mb-4">
-            <BlurText text="Cookie Policy" delay={80} />
+            <BlurText text={t('cookiesPage.title')} delay={80} />
           </h1>
           <motion.p
             className="font-body font-light text-white/25 text-[13px] mb-16"
@@ -52,13 +33,13 @@ export default function Cookies() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Last updated: {LAST_UPDATED}
+            {t('cookiesPage.lastUpdated')}
           </motion.p>
 
           <div>
-            {SECTIONS.map((section, i) => (
+            {sections.map((section, i) => (
               <motion.div
-                key={section.title}
+                key={i}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

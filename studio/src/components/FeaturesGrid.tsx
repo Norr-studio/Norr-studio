@@ -1,29 +1,12 @@
 import { motion } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 
-const SERVICES = [
-  {
-    number: '01',
-    title: 'Instant iterations',
-    body: 'Ask for a change. See it live the same day, not in a week.',
-  },
-  {
-    number: '02',
-    title: 'Conversion-first',
-    body: 'Every decision on the page comes down to one question: will this make the visitor take action?',
-  },
-  {
-    number: '03',
-    title: 'Consistent brand',
-    body: 'Same colours, fonts, and feel everywhere. Nothing drifts.',
-  },
-  {
-    number: '04',
-    title: 'Monthly updates',
-    body: 'Your site stays current. No rebuilds, no re-platforming, no extra cost.',
-  },
-]
+type ServiceItem = { number: string; title: string; body: string }
 
 export function FeaturesGrid() {
+  const { t } = useTranslation()
+  const services = t('services.items', { returnObjects: true }) as ServiceItem[]
+
   return (
     <section className="py-24 px-6 bg-transparent border-t border-white/[0.05]">
       <div className="max-w-6xl mx-auto">
@@ -34,11 +17,11 @@ export function FeaturesGrid() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          What we do
+          {t('services.label')}
         </motion.p>
 
         <div>
-          {SERVICES.map((s, i) => (
+          {services.map((s, i) => (
             <motion.div
               key={s.number}
               className="group flex items-start gap-8 md:gap-16 py-8 border-b border-white/[0.06] hover:bg-white/[0.015] -mx-4 px-4 transition-colors duration-300"

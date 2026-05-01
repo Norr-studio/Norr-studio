@@ -1,30 +1,14 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'motion/react'
 import Hls from 'hls.js'
+import { useTranslation } from 'react-i18next'
 
-// Replace with your actual Mux HLS URL
 const HLS_URL = ''
-
-const STEPS = [
-  {
-    number: '01',
-    title: 'Brief & Strategy',
-    body: 'One 30-minute call. We ask the right questions about your business, your customers, and what you want people to do when they land on your site.',
-  },
-  {
-    number: '02',
-    title: 'Design & Build',
-    body: 'Senior designers build it. AI cuts the waiting time. Most sites ship in two weeks.',
-  },
-  {
-    number: '03',
-    title: 'Launch & Iterate',
-    body: 'We go live. Then we track what\'s working and fix what isn\'t. No ticket, no waiting.',
-  },
-]
 
 export function StartSection() {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const { t } = useTranslation()
+  const steps = t('start.steps', { returnObjects: true }) as { number: string; title: string; body: string }[]
 
   useEffect(() => {
     const v = videoRef.current
@@ -70,7 +54,7 @@ export function StartSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            The process
+            {t('start.label')}
           </motion.p>
           <motion.h2
             className="font-heading italic font-bold text-[clamp(2.2rem,5vw,4rem)] leading-[0.95] text-white max-w-xl"
@@ -79,13 +63,13 @@ export function StartSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
-            Brief to live site in days
+            {t('start.heading')}
           </motion.h2>
         </div>
 
         {/* Steps */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.05]">
-          {STEPS.map((step, i) => (
+          {steps.map((step, i) => (
             <motion.div
               key={step.number}
               className="p-8 lg:p-12 bg-[#020d0a] hover:bg-white/[0.02] transition-colors duration-300"

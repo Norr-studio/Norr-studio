@@ -1,32 +1,14 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
+import { useTranslation } from 'react-i18next'
 import feature1 from '../assets/feature-1.gif'
 import feature2 from '../assets/feature-2.gif'
 
-const FEATURES = [
-  {
-    tag: 'Design Intelligence',
-    title: 'Built for your business, not borrowed from a template',
-    body: 'We look at your market and your competitors before touching a layout. The site you get feels like it was made for your business specifically, because it was.',
-    gif: feature1,
-    alt: 'AI design preview',
-  },
-  {
-    tag: 'Speed',
-    title: 'Live in two weeks',
-    body: 'Design and development happen in parallel. No waiting for one to finish before the other starts. You get a real site on a real date.',
-    gif: feature2,
-    alt: 'Rapid build preview',
-  },
-]
+const GIFS = [feature1, feature2]
 
-function FeatureRow({
-  feature,
-  index,
-}: {
-  feature: (typeof FEATURES)[number]
-  index: number
-}) {
+type FeatureItem = { tag: string; title: string; body: string; alt: string }
+
+function FeatureRow({ feature, index }: { feature: FeatureItem; index: number }) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], [40, -40])
@@ -68,13 +50,12 @@ function FeatureRow({
         >
           <div className="liquid-glass rounded-2xl overflow-hidden aspect-video">
             <img
-              src={feature.gif}
+              src={GIFS[index]}
               alt={feature.alt}
               className="w-full h-full object-cover"
               loading="lazy"
             />
           </div>
-          {/* Subtle glow */}
           <div className="absolute -inset-4 bg-white/[0.015] rounded-3xl blur-2xl -z-10" />
         </motion.div>
       </div>
@@ -83,10 +64,13 @@ function FeatureRow({
 }
 
 export function FeaturesChess() {
+  const { t } = useTranslation()
+  const features = t('features.items', { returnObjects: true }) as FeatureItem[]
+
   return (
     <section id="features" className="bg-transparent">
-      {FEATURES.map((feature, i) => (
-        <FeatureRow key={feature.tag} feature={feature} index={i} />
+      {features.map((feature, i) => (
+        <FeatureRow key={i} feature={feature} index={i} />
       ))}
     </section>
   )

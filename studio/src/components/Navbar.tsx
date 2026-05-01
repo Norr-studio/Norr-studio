@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
-
-const hashLinks = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Features', href: '#features' },
-]
-
-const routeLinks = [
-  { label: 'Work', href: '/work' },
-  { label: 'Pricing', href: '/pricing' },
-]
+import { useTranslation } from 'react-i18next'
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const location = useLocation()
   const isHome = location.pathname === '/'
+  const { t, i18n } = useTranslation()
+
+  const hashLinks = [
+    { label: t('nav.howItWorks'), href: '#how-it-works' },
+    { label: t('nav.features'), href: '#features' },
+  ]
+
+  const routeLinks = [
+    { label: t('nav.work'), href: '/work' },
+    { label: t('nav.pricing'), href: '/pricing' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -24,8 +26,23 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close menu on route change
   useEffect(() => { setMenuOpen(false) }, [location.pathname])
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === 'fi' ? 'en' : 'fi')
+  }
+
+  const LangToggle = ({ className = '' }: { className?: string }) => (
+    <button
+      onClick={toggleLang}
+      aria-label={i18n.language === 'fi' ? 'Switch to English' : 'Vaihda suomeksi'}
+      className={`flex items-center gap-0.5 text-[12px] font-body font-medium tracking-[0.08em] transition-colors duration-200 ${className}`}
+    >
+      <span className={i18n.language === 'fi' ? 'text-white/90' : 'text-white/30 hover:text-white/60'}>FI</span>
+      <span className="text-white/20 mx-0.5">/</span>
+      <span className={i18n.language === 'en' ? 'text-white/90' : 'text-white/30 hover:text-white/60'}>EN</span>
+    </button>
+  )
 
   return (
     <motion.header
@@ -53,7 +70,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           {hashLinks.map((link) => (
             <a
-              key={link.label}
+              key={link.href}
               href={isHome ? link.href : `/${link.href}`}
               className="text-[13px] font-body font-light text-white/50 hover:text-white/90 transition-colors duration-200"
             >
@@ -62,7 +79,7 @@ export function Navbar() {
           ))}
           {routeLinks.map((link) => (
             <Link
-              key={link.label}
+              key={link.href}
               to={link.href}
               className="text-[13px] font-body font-light text-white/50 hover:text-white/90 transition-colors duration-200"
             >
@@ -71,19 +88,22 @@ export function Navbar() {
           ))}
         </div>
 
+        {/* Language toggle — desktop */}
+        <LangToggle className="hidden md:flex" />
+
         {/* Desktop CTA */}
         <Link
           to="/contact"
           className="hidden md:block ml-2 px-4 py-1.5 rounded-full border border-white/20 text-[13px] font-body font-medium text-white/90 hover:bg-white/10 hover:border-white/40 transition-[background-color,border-color,color] duration-200"
         >
-          Get started
+          {t('nav.getStarted')}
         </Link>
 
         {/* Mobile hamburger */}
         <button
           className="md:hidden ml-2 flex flex-col justify-center items-center w-8 h-8 gap-1.5"
           onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-label={menuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={menuOpen}
           aria-controls="mobile-menu"
         >
@@ -120,7 +140,7 @@ export function Navbar() {
             <div className="flex flex-col py-3">
               {hashLinks.map((link) => (
                 <a
-                  key={link.label}
+                  key={link.href}
                   href={isHome ? link.href : `/${link.href}`}
                   onClick={() => setMenuOpen(false)}
                   className="px-6 py-3 text-[14px] font-body font-light text-white/90 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
@@ -130,7 +150,7 @@ export function Navbar() {
               ))}
               {routeLinks.map((link) => (
                 <Link
-                  key={link.label}
+                  key={link.href}
                   to={link.href}
                   className="px-6 py-3 text-[14px] font-body font-light text-white/90 hover:text-white hover:bg-white/[0.03] transition-colors duration-150"
                 >
@@ -138,11 +158,14 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="mx-6 my-2 border-t border-white/[0.06]" />
+              <div className="mx-6 mb-3 flex items-center justify-between">
+                <LangToggle />
+              </div>
               <Link
                 to="/contact"
                 className="mx-6 mb-2 px-4 py-2.5 rounded-full border border-white/20 text-[13px] font-body font-medium text-white/90 hover:bg-white/10 text-center transition-[background-color,border-color] duration-200"
               >
-                Get started
+                {t('nav.getStarted')}
               </Link>
             </div>
           </motion.div>
