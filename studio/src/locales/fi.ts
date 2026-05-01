@@ -12,8 +12,8 @@ const fi = {
   hero: {
     line1: 'Verkkosivut jotka',
     line2: 'ajattelevat puolestasi',
-    body: 'Me hoidamme suunnittelun, toteutuksen ja julkaisun. Sinä pyörität bisnestä.',
-    bookCall: 'Varaa puhelu',
+    body: 'Sinä kerrot mitä tarvitset. Me rakennamme sivuston joka tuo asiakkaita ja julkaisemme alle kahdessa viikossa.',
+    bookCall: 'Varaa maksuton puhelu',
     seeHow: 'Katso miten se toimii',
   },
 
@@ -35,18 +35,18 @@ const fi = {
     steps: [
       {
         number: '01',
-        title: 'Briiffi & Strategia',
-        body: 'Yksi 30 minuutin puhelu. Kysymme oikeat kysymykset liiketoiminnastasi, asiakkaistasi ja siitä, mitä haluat ihmisten tekevän kun he saapuvat sivustollesi.',
+        title: 'Briiffi ja strategia',
+        body: 'Yksi 30 minuutin puhelu. Kysymme mitä oikeasti tarvitaan, ymmärrämme liiketoimintasi ja sovimme selkeän suunnan ennen kuin yhtäkään pikseliä siirretään.',
       },
       {
         number: '02',
-        title: 'Suunnittelu & Toteutus',
-        body: 'Seniorsuunnittelijat rakentavat. AI lyhentää odotusaikaa. Useimmat sivustot julkaistaan kahdessa viikossa.',
+        title: 'Suunnittelu ja toteutus',
+        body: 'Suunnittelija aloittaa heti. Rakennamme nopeasti ja lähetämme versioita sitä mukaa kun ne valmistuvat. Ei kuukauden odottelua, ei pitkiä sähköpostiketjuja.',
       },
       {
         number: '03',
-        title: 'Julkaisu & Kehitys',
-        body: 'Julkaisemme. Sitten seuraamme mikä toimii ja korjaamme mikä ei. Ei tikettejä, ei odottelua.',
+        title: 'Julkaisu ja kehitys',
+        body: 'Julkaisemme sovittuna päivänä. Sen jälkeen seuraamme dataa ja teemme muutokset sen mukaan. Sivusto ei ole koskaan täysin valmis, se vain paranee koko ajan.',
       },
     ],
   },
@@ -54,15 +54,15 @@ const fi = {
   features: {
     items: [
       {
-        tag: 'Suunnitteluäly',
+        tag: 'Suunnittelufilosofia',
         title: 'Rakennettu liiketoimintaasi varten, ei kopioitu mallista',
-        body: 'Tutkimme markkinasi ja kilpailijasi ennen kuin koskemme layoutiin. Saamasi sivusto tuntuu kuin se olisi tehty juuri sinun liiketoimintaasi varten, koska se on.',
+        body: 'Jokainen sivusto rakennetaan alusta asti. Käymme ensin läpi miten liiketoimintasi toimii ja mitä asiakas tekee ennen kuin ottaa yhteyttä. Sivusto rakennetaan sen ympärille, ei toisin päin.',
         alt: 'AI-suunnittelun esikatselu',
       },
       {
         tag: 'Nopeus',
         title: 'Julkaisu kahdessa viikossa',
-        body: 'Suunnittelu ja kehitys tapahtuvat rinnakkain. Ei tarvitse odottaa toista ennen kuin toinen aloittaa. Saat oikean sivuston oikeana päivänä.',
+        body: 'Suunnittelu ja toteutus tapahtuvat rinnakkain. Ei odottelua ennen seuraavaa vaihetta. Saat valmiin sivuston oikeaan päivämäärään.',
         alt: 'Nopean toteutuksen esikatselu',
       },
     ],
@@ -74,22 +74,22 @@ const fi = {
       {
         number: '01',
         title: 'Välittömät iteraatiot',
-        body: 'Pyydä muutos. Näe se tuotannossa samana päivänä, ei viikon päästä.',
+        body: 'Näytit muutoksen, siinä se on. Ei viikon päästä, ei sähköpostiketjun jälkeen.',
       },
       {
         number: '02',
         title: 'Konversio ensin',
-        body: 'Jokainen sivun päätös palautuu yhteen kysymykseen: saako tämä kävijän toimimaan?',
+        body: 'Jokaiseen suunnittelupäätökseen on yksi kysymys: lisääkö tämä todennäköisyyttä sille, että vieras ottaa yhteyttä? Jos ei, se jää pois.',
       },
       {
         number: '03',
         title: 'Yhtenäinen brändi',
-        body: 'Samat värit, fontit ja tunnelma kaikkialla. Mikään ei lipeä.',
+        body: 'Sama väri, fontti ja tunnelma kaikkialla. Sekava ilme maksaa asiakkaita enemmän kuin useimmat uskovat.',
       },
       {
         number: '04',
         title: 'Kuukausipäivitykset',
-        body: 'Sivustosi pysyy ajantasaisena. Ei uudelleenrakentamista, ei alustan vaihtoa, ei lisäkuluja.',
+        body: 'Hosting, SSL ja päivitykset hoidettu. Ylläpitopaketilla saat myös yhden tekstimuutoksen kvartaalissa, ilman erillistä laskua.',
       },
     ],
   },
@@ -97,8 +97,8 @@ const fi = {
   cta: {
     line1: 'Haluatko nähdä mitä',
     line2: 'sivustosi voisi tehdä?',
-    body: 'Varaa ilmainen puhelu. Kartoitamme tarkalleen mitä sivustosi tarvitsee. Kestää 30 minuuttia, ei sitoumuksia. Sinulla on selkeä suunnitelma sen jälkeen.',
-    bookCall: 'Varaa puhelu',
+    body: 'Varaa maksuton 20 minuutin puhelu. Kerromme rehellisesti mitä se vaatisi ja mikä hinta olisi.',
+    bookCall: 'Varaa maksuton puhelu',
   },
 
   footer: {
@@ -251,17 +251,17 @@ const fi = {
     label: 'Jutellaan',
     heading1: 'Kerro meille',
     heading2: 'projektistasi',
-    subheading: 'Täytä muutama kohta ja palaamme sinulle selkeällä suunnitelmalla — ei jargonia, ei paineita.',
+    subheading: 'Täytä lomake ja palaamme yhden työpäivän kuluessa. Ei myyntipuheita, vain rehellinen arvio siitä mitä projekti vaatii.',
     fieldName: 'Nimi',
     fieldEmail: 'Sähköposti',
     fieldProjectType: 'Projektin tyyppi',
-    fieldBudget: 'Budjetti',
+    fieldBudget: 'Paketti',
     fieldMessage: 'Kerro lisää',
     placeholderName: 'Nimesi',
     placeholderEmail: 'sinä@yritys.fi',
-    placeholderMessage: 'Mitä olet rakentamassa? Onko deadline? Mitä muuta meidän pitäisi tietää?',
+    placeholderMessage: 'Mitä olet rakentamassa? Onko deadlinea? Mitä muuta meidän pitäisi tietää?',
     projectTypes: ['Verkkosivusto', 'Laskeutumissivu', 'Muu'],
-    budgetRanges: ['Alle 1k€', '1k€ – 3k€', '3k€+'],
+    budgetRanges: ['Perus', 'Kasvu', 'Enterprise'],
     sending: 'Lähetetään…',
     send: 'Lähetä viesti',
     successHeading: 'Viesti vastaanotettu',
@@ -278,13 +278,13 @@ const fi = {
     selectedWork: 'Valittuja töitä',
     project: {
       tag: 'Web-suunnittelu · Kehitys',
-      description: 'Extendd tarvitsi sivuston joka vastasi heidän tarjoomansa kunnianhimoa — yhdistämällä teknologian ja henkilökohtaisen konsultoinnin yritysten kestävään kasvuun. Rakensimme nopean, konversioon keskittyvän sivuston alle kahdessa viikossa.',
+      description: 'Extendd tarvitsi sivuston joka näyttää samalta kuin heidän palvelunsa tuntuu. Selkeä, nopea ja rakennettu siten, että vierailija ymmärtää tarjoaman kymmenessä sekunnissa. Valmis alle kahdessa viikossa.',
     },
     metaClient: 'Asiakas',
     metaServices: 'Palvelut',
     metaYear: 'Vuosi',
     metaLiveSite: 'Julkaistu sivusto',
-    moreCaseStudies: 'Lisää tapaustutkimuksia saatavilla pyynnöstä — jokainen projekti esitellään omassa esitteessään.',
+    moreCaseStudies: 'Lisää töitä tulossa pian. Varaa puhelu niin kerromme lisää projekteista joita ei vielä näy täällä.',
     bookCall: 'Varaa puhelu',
   },
 
