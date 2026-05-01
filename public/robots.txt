@@ -1,0 +1,31 @@
+# robots.txt for norrstudio.fi
+# Last updated: 2026-05-01
+
+User-agent: *
+Allow: /
+
+# AI Search Crawlers - ALLOW
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Training-only crawlers - block these
+User-agent: CCBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://www.norrstudio.fi/sitemap.xml

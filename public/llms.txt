@@ -1,0 +1,56 @@
+# Norr Studio
+
+> Web design and development for Finnish SMEs.
+> We build conversion-focused websites for trades: barbers, LVI, restaurants, and more.
+> Based in Helsinki, Finland. Serving all of Finland.
+
+## About
+
+Norr Studio is a Helsinki-based web design and development agency specializing in
+creating high-converting websites for small and medium enterprises (SMEs) in Finland.
+
+We focus on trades and service businesses: barbershops, LVI (heating/ventilation)
+companies, restaurants, cafes, and other local businesses that need a professional
+online presence.
+
+Our approach combines AI-powered design tools with human expertise to deliver
+websites faster and more affordably than traditional agencies.
+
+## Services
+
+- **Web Design** - Custom, conversion-focused website design
+- **Web Development** - Full-stack development with modern technologies
+- **SEO** - Search engine optimization for Finnish markets
+- **Branding** - Visual identity and brand strategy
+- **Maintenance** - Ongoing support and updates
+
+## Target Audience
+
+Finnish SMEs, particularly in:
+- Beauty & wellness (barbers, hair salons, spas)
+- Construction & trades (LVI, electricians, plumbers)
+- Food & beverage (restaurants, cafes, bakeries)
+- Professional services
+
+## Contact
+
+- Website: https://www.norrstudio.fi
+- Email: marijus@norrstudio.fi
+- Phone: +358 40 1684485
+- Location: Helsinki, Finland
+- Address: Capellanranta 3 D 14, 00580 Helsinki
+- Service Area: All of Finland
+- Business ID: 3618179-8
+
+## Key Pages
+
+- Homepage: https://www.norrstudio.fi/
+- Pricing: https://www.norrstudio.fi/pricing
+- Our Work: https://www.norrstudio.fi/work
+- Contact: https://www.norrstudio.fi/contact
+- Features: https://www.norrstudio.fi/#features
+- How It Works: https://www.norrstudio.fi/#how-it-works
+
+## Pricing
+
+See our structured pricing at: https://www.norrstudio.fi/pricing
