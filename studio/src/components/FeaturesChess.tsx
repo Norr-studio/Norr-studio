@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { useTranslation } from 'react-i18next'
-import feature1 from '../assets/feature-1.gif'
-import feature2 from '../assets/feature-2.gif'
+import feature1 from '../assets/feature-1.mp4'
+import feature2 from '../assets/feature-2.mp4'
 
-const GIFS = [feature1, feature2]
+const VIDEOS = [feature1, feature2]
 
 type FeatureItem = { tag: string; title: string; body: string; alt: string }
 
@@ -49,11 +49,13 @@ function FeatureRow({ feature, index }: { feature: FeatureItem; index: number })
           className="relative"
         >
           <div className="liquid-glass rounded-2xl overflow-hidden aspect-video">
-            <img
-              src={GIFS[index]}
-              alt={feature.alt}
+            <video
+              src={VIDEOS[index]}
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
-              loading="lazy"
             />
           </div>
           <div className="absolute -inset-4 bg-white/[0.015] rounded-3xl blur-2xl -z-10" />
